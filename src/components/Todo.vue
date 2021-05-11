@@ -1,14 +1,14 @@
 <template>
   <li
-    class="mb-2 row d-flex list-group-item align-items-center"
+    class="mb-2 row d-flex align-items-center border p-2"
     :class="{ checked: checked }"
   >
     <input type="checkbox" class="mr-2" @click="toggleChecked" />
     <div class="flex-fill">{{ todo.todo }}</div>
-    <div class="col-3">{{ localDate }}</div>
+    <div class="date">{{ localDate }}</div>
     <div class="pl-3">
       <button @click="$emit('remove-todo', todo)" class="btn btn-sm btn-danger">
-        X
+        &times;
       </button>
     </div>
   </li>
@@ -41,5 +41,10 @@ export default {
   text-decoration: line-through;
   color: #747474;
   background-color: #eee;
+}
+
+.date {
+  text-align: right;
+  min-width: 200px;
 }
 </style>

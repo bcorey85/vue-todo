@@ -27,10 +27,12 @@ export default {
   },
   methods: {
     addTodo(todo) {
-      const isUnique = this.todos.indexOf(todo) === -1;
+      const isUnique =
+        this.todos.filter(t => {
+          return t.todo === todo;
+        }).length === 0;
 
       if (todo && isUnique) {
-        console.log(Date.now());
         this.todos.push({
           todo,
           date: Date.now()

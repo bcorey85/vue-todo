@@ -1,9 +1,6 @@
 <template>
   <form @submit.prevent="addTodo" class="mb-4 row">
     <div class="input-group justify-content-center">
-      <div class="input-group-prepend">
-        <label for="add-todo" class="input-group-text">Add a Todo</label>
-      </div>
       <input id="add-todo" type="text" v-model="todoText" />
       <div class="input-group-append">
         <button type="submit" class="btn btn-success">Add</button>
